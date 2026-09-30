@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="أداة عربية لتوليد برومبتات المشاهد الورقية المنبثقة من صورة أو وصف" />
+<meta name="theme-color" content="#123d72" />
+<title>مولد برومبت المشاهد الورقية ثلاثية الأبعاد</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+:root{--ink:#17334a;--muted:#597084;--line:#dce8e9;--blue:#1565b8;--blue2:#104a94;--teal:#0e9a91;--mint:#dff8ef;--panel:#fff;--bg:#f3f8f9;--shadow:0 16px 46px rgba(19,64,87,.09);--rad:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 90% 2%,#d4f6e7 0,transparent 31%),radial-gradient(circle at 5% 18%,#e0ebff 0,transparent 30%),var(--bg);color:var(--ink);font-family:Cairo,Tajawal,"Noto Sans Arabic",system-ui,sans-serif;font-size:14px;line-height:1.7}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.55}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.preset:focus-visible{outline:3px solid #38b7a9;outline-offset:2px}.app{max-width:1540px;margin:auto;padding:22px 24px 55px}.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(113deg,#123d72 5%,#185ca0 52%,#089e91);color:#fff;border-radius:30px;padding:36px 42px;box-shadow:0 25px 55px #104b7350;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.hero:after{content:"";position:absolute;z-index:-1;width:420px;height:420px;border-radius:50%;left:-100px;top:-240px;background:#ffffff15;box-shadow:0 0 0 70px #ffffff09,0 0 0 145px #ffffff06}.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#ffffff24;border:1px solid #ffffff38;padding:5px 14px;border-radius:99px;font-weight:800;font-size:12px}.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:#7af5c4;box-shadow:0 0 0 5px #7af5c43b}.hero h1{font-size:clamp(27px,3.2vw,43px);line-height:1.35;margin:15px 0 8px;font-weight:900;letter-spacing:-.6px}.hero p{margin:0;max-width:850px;color:#e7f5ff}.hero-art{width:160px;height:145px;position:relative;transform:rotate(-7deg)}.hero-art .sheet{position:absolute;inset:35px 12px 13px;background:linear-gradient(145deg,#f9fffc,#d5e9ee);border-radius:6px 24px 8px 6px;box-shadow:11px 12px 0 #9bcbd9,15px 20px 20px #032b4360;transform:skewY(-6deg)}.hero-art .sheet:before{content:"";position:absolute;width:70px;height:70px;right:35px;top:-35px;background:#f8d77c;clip-path:polygon(50% 0,100% 100%,0 100%);filter:drop-shadow(4px 5px 2px #164e6c80)}.hero-art .sheet:after{content:"";position:absolute;width:46px;height:52px;left:10px;top:-25px;background:#7be0be;border-radius:60% 60% 8% 8%;transform:rotate(-18deg)}.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}.toolbar button,.btn,.file-btn,.out-actions button,.panel-h button{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 15px;color:var(--ink);font-weight:800;transition:transform .17s,box-shadow .17s,background .17s}.toolbar button:hover,.out-actions button:hover,.panel-h button:hover,.preset:hover{transform:translateY(-2px);box-shadow:0 8px 20px #123e6620}.toolbar .primary,.out-actions .primary{color:#fff;border-color:#1160ab;background:linear-gradient(120deg,var(--blue),#0d9f9a)}.toolbar .soft{color:#0b665d;background:#e2f9ef;border-color:#bcf0dc}.toolbar .danger{color:#b13542}.layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(370px,.88fr);gap:18px;align-items:start}.panel{background:var(--panel);border:1px solid #e2ebed;border-radius:var(--rad);box-shadow:var(--shadow);overflow:hidden}.panel-h{padding:17px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}.panel-h h2{margin:0;font-size:19px;font-weight:900}.panel-b{padding:18px 22px 23px}.tabs{display:flex;gap:7px;overflow:auto;scrollbar-width:thin;padding:0 0 12px;margin-bottom:12px;border-bottom:1px solid var(--line)}.tab{flex:0 0 auto;border:1px solid transparent;background:#f0f6f7;padding:9px 15px;border-radius:11px;color:#416073;font-weight:800;transition:.2s}.tab:hover{background:#e2f1f3}.tab.active{background:#dff5ec;border-color:#91dfcc;color:#075f58;box-shadow:inset 0 -2px #20af96}.section{display:none;animation:appear .24s ease}.section.active{display:block}@keyframes appear{from{opacity:.3;transform:translateY(7px)}to{opacity:1;transform:none}}.group{border:1px solid var(--line);border-radius:17px;padding:18px;margin:0 0 15px;background:linear-gradient(180deg,#fff,#fcfefe)}.group h3{font-size:16px;margin:0 0 14px;font-weight:900}.group h3:before{content:"";display:inline-block;width:5px;height:18px;background:#26ad9b;border-radius:5px;vertical-align:middle;margin-left:9px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.field{min-width:0;display:flex;flex-direction:column;gap:6px}.field label{font-size:12px;font-weight:800;color:#385369}.field input:not([type=checkbox]):not([type=file]),textarea,select{width:100%;min-height:43px;border:1px solid #cedde2;border-radius:10px;padding:9px 11px;background:#fff;color:#193d54;outline:none}.field input:focus,textarea:focus,select:focus{border-color:#21a798;box-shadow:0 0 0 3px #20b5a226}textarea{resize:vertical;min-height:100px;line-height:1.8}.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.check{display:flex;gap:7px;align-items:flex-start;background:#f8fbfb;border:1px solid #e5eeee;border-radius:10px;padding:8px 10px;font-weight:600;font-size:12px;cursor:pointer}.check:hover{border-color:#8cdacb}.check input{margin-top:6px;accent-color:#0c998c}.preview{border:2px dashed #b8d6da;background:#f7fcfc;border-radius:15px;min-height:96px;padding:13px;display:flex;flex-wrap:wrap;gap:10px}.thumb{width:120px;border:1px solid #d8e6e7;border-radius:11px;overflow:hidden;background:#fff}.thumb img,.thumb .pdficon{display:block;width:100%;height:85px;object-fit:cover}.thumb .pdficon{display:grid;place-items:center;color:#bf4c50;background:#ffeded;font-weight:900;font-size:23px}.thumb span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px;padding:6px}.hint,.note{color:var(--muted);font-size:12px;line-height:1.8}.callout{padding:13px 15px;background:#eaf7fb;border:1px solid #b9e2ec;color:#1d5468;border-radius:12px;font-size:12px;margin:11px 0}.warning{background:#fff5e5;border-color:#edd5a4;color:#725122}.error{background:#fff0f0;border-color:#f0c6c6;color:#a52e36}.is-hidden{display:none!important}.mini-actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.mini-actions button{background:#fff;color:#195d6b;border:1px solid #cce2e7;border-radius:9px;padding:6px 11px;font-weight:800}.page-list{display:grid;gap:8px}.page-row{border:1px solid #dce9e9;border-radius:11px;padding:10px;display:grid;grid-template-columns:1fr 1.4fr;gap:8px;align-items:center;background:#fff}.page-row label{font-size:12px;font-weight:800}.page-row textarea{grid-column:1/-1;min-height:52px}.page-row input[type=checkbox]{accent-color:#0a998b}.output-wrap{position:sticky;top:14px}.out-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.out-tab{border:1px solid #dae7eb;border-radius:10px;background:#f3f7f9;color:#3a5868;padding:7px 10px;font-size:12px;font-weight:800}.out-tab.active{background:#163b67;color:#fff;border-color:#163b67}.output{white-space:pre-wrap;overflow-wrap:break-word;word-break:normal;direction:ltr;text-align:left;min-height:350px;max-height:57vh;overflow:auto;background:#0f2336;color:#ecf9ff;padding:19px 20px;border-radius:14px;font-size:12.5px;line-height:1.9;user-select:text}.output.ar{direction:rtl;text-align:right}.meta{display:flex;justify-content:space-between;gap:10px;font-size:11px;color:var(--muted);margin-top:8px}.out-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}.out-actions button{font-size:12px;padding:8px 12px}.preset-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.preset{border:1px solid #dbe7e7;background:#faffff;border-radius:12px;padding:12px;text-align:right;transition:.2s}.preset b{display:block;color:#16566c}.preset small{color:#648092}.spec-box{background:#ebfaf5;border:1px solid #bde9d7;border-radius:13px;padding:13px;margin-bottom:12px}.toast{position:fixed;z-index:50;bottom:20px;left:20px;background:#113c54;color:#fff;padding:10px 18px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:none}.footer{text-align:center;color:#66818a;font-size:11px;padding:23px 5px}.footer a{color:#1867a4}.counter-pill{background:#e9f7f4;border-radius:99px;color:#0c776f;font-weight:800;font-size:12px;padding:4px 10px}@media(max-width:1020px){.layout{grid-template-columns:1fr}.output-wrap{position:static}.hero-art{width:115px}}@media(max-width:650px){.app{padding:10px}.hero{padding:24px;grid-template-columns:1fr}.hero-art{display:none}.panel-b{padding:13px}.grid,.grid3,.checks,.preset-grid{grid-template-columns:1fr}.page-row{grid-template-columns:1fr}.toolbar button,.file-btn{flex:1 1 auto}.output{max-height:55vh}}
+.sep{border:0;border-top:1px solid var(--line);margin:16px 0}.file-btn{display:inline-flex;align-items:center;cursor:pointer}.file-btn:focus-visible,.tab:focus-visible,.out-tab:focus-visible{outline:3px solid #38b7a9;outline-offset:2px}.preview.drag{border-color:#21a798;background:#e9faf5}.over{color:#b13542!important;font-weight:900}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="hero">
+    <div>
+      <span class="eyebrow">أداة مجانية للمعلمين والمعلمات</span>
+      <h1>مولد المشاهد الورقية المنبثقة</h1>
+      <p>من صورة أو وصف إلى مشهد ورقي منبثق أو مجسم مستقل بخلفية شفافة؛ مع حماية الوجوه والنص العربي والتحكم بالطبقات والحركة والإضاءة.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true"><div class="sheet"></div></div>
+  </header>
+
+  <div class="toolbar">
+    <button class="primary" id="generateBtn">إنشاء البرومبت</button>
+    <button class="soft" id="smartBtn">وضع ذكي تلقائي</button>
+    <button id="saveBtn">حفظ الإعدادات</button>
+    <button id="loadBtn">استعادة المحفوظ</button>
+    <button id="exportBtn">تصدير JSON</button>
+    <label class="file-btn" tabindex="0" role="button">استيراد JSON<input id="importJson" type="file" accept=".json" hidden></label>
+    <button class="danger" id="resetBtn">إعادة الضبط</button>
+  </div>
+
+  <main class="layout">
+    <section class="panel">
+      <div class="panel-h"><h2>إعدادات المشروع</h2><span class="note">يمكن ترك أي حقل غير مطلوب فارغًا</span></div>
+      <div class="panel-b">
+        <div class="tabs" id="tabs">
+          <button class="tab active" data-tab="source">المصدر</button>
+          <button class="tab" data-tab="style">التحويل والأسلوب</button>
+          <button class="tab" data-tab="preserve">الحفاظ والقيود</button>
+          <button class="tab" data-tab="motion">الحركة والكاميرا</button>
+          <button class="tab" data-tab="material">الخامات والإضاءة</button>
+          <button class="tab" data-tab="text">النصوص العربية</button>
+          <button class="tab" data-tab="special">التخصصات</button>
+          <button class="tab" data-tab="output">الإخراج</button>
+          <button class="tab" data-tab="presets">قوالب جاهزة</button>
+        </div>
+
+        <div class="section active" id="source">
+          <div class="group">
+            <h3>نوع الإدخال</h3>
+            <div class="grid3">
+              <div class="field"><label>المصدر</label>
+                <select id="sourceType">
+                  <option value="single image">صورة واحدة</option>
+                  <option value="multiple images">عدة صور</option>
+                  <option value="single-page PDF">PDF صفحة واحدة</option>
+                  <option value="multi-page PDF">PDF عدة صفحات</option>
+                  <option value="text description only">وصف نصي فقط</option>
+                  <option value="image plus description">صورة + وصف</option>
+                  <option value="multiple images plus shared description">صور متعددة + وصف موحد</option>
+                </select>
+              </div>
+              <div class="field" id="multiFields"><label>طريقة معالجة عدة صفحات</label>
+                <select id="multiMode">
+                  <option value="independent prompt for each page">برومبت مستقل لكل صفحة</option>
+                  <option value="same visual rules across all pages">نفس النمط لكل الصفحات</option>
+                  <option value="connected sequential scenes">تسلسل مترابط</option>
+                  <option value="merge selected pages into one scene">دمج صفحات مختارة</option>
+                </select>
+              </div>
+              <div class="field"><label>مرجع الصفحات</label>
+                <select id="pageReference">
+                  <option value="each page is its own reference">كل صفحة مرجع مستقل</option>
+                  <option value="first page defines the visual language">الصفحة الأولى مرجع بصري</option>
+                  <option value="shared style only, preserve each page content">أسلوب موحد ومحتوى مستقل</option>
+                </select>
+              </div>
+            </div>
+            <hr class="sep">
+            <div class="field" id="uploadGroup">
+              <label>رفع صورة/صور أو PDF</label>
+              <input id="files" type="file" accept="image/*,.pdf" multiple />
+              <div class="preview" id="preview"><span class="note">ستظهر معاينة الصور هنا.</span></div><p class="hint" id="sourceTip"></p>
+            </div>
+          </div>
+
+          <div class="group" id="pageGroup">
+            <h3>الصفحات والصور المتعددة</h3>
+            <p class="note">يمكن تخصيص توجيه لكل صفحة واستبعاد صفحات محددة. عدد صفحات PDF يُستخرج محليًا عندما تسمح بنية الملف؛ راجعه قبل التوليد.</p>
+            <div class="mini-actions"><button type="button" id="pdfCountBtn">تعديل عدد صفحات PDF</button></div>
+            <div id="pageList" class="page-list"></div>
+          </div>
+          <div class="group">
+            <h3>الوصف المسبق</h3>
+            <div class="field">
+              <label>صف المشهد أو ما تريد إبرازَه</label>
+              <textarea id="description" placeholder="مثال: حافظ على الطفلة والطاولة وحرف ث، واجعل القصاصات الورقية طبقات بارزة مع حركة فتح هادئة..."></textarea>
+            </div>
+            <div class="field">
+              <label>تعليمات خاصة إضافية</label>
+              <textarea id="extra" placeholder="أي تعليمات خاصة لا تغطيها الخيارات الجاهزة."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="style">
+          <div class="group" id="standaloneGroup">
+            <h3>مجسم مستقل بخلفية شفافة</h3>
+            <p class="note">يناسب شعارًا أو شخصًا أو عنصرًا واحدًا. النتيجة صورة PNG بمظهر مجسم ثلاثي الأبعاد وقناة شفافية، دون صفحة أو قاعدة أو ظل خارج العنصر؛ وليست ملف نموذج قابلًا للدوران.</p>
+            <div class="grid3">
+              <div class="field"><label for="standaloneType">نوع العنصر</label><select id="standaloneType"><option value="auto">تحديده من المرجع</option><option value="logo">شعار ونصوصه</option><option value="person">شخصية أو شخص</option><option value="object">غرض مستقل</option></select></div>
+              <div class="field"><label for="standaloneDepth">عمق المجسم</label><select id="standaloneDepth"><option value="subtle">خفيف</option><option value="medium" selected>متوسط</option><option value="strong">واضح ومنضبط</option></select></div>
+              <div class="field"><label for="standaloneFinish">الخامة والشكل</label><select id="standaloneFinish"><option value="faithful" selected>يحافظ على أسلوب الأصل</option><option value="polished">مجسم ناعم مصقول</option><option value="sculpted">مجسم فني مصوّر</option><option value="paper">مجسم ورقي مستقل</option></select></div>
+              <div class="field"><label for="standaloneView">زاوية العرض</label><select id="standaloneView"><option value="front" selected>واجهة الأصل مع إظهار العمق من الحواف</option><option value="gentle3q">ميل خفيف جدًا ثلاثي الأرباع</option></select></div>
+              <div class="field"><label for="standaloneFidelity">حماية المرجع</label><select id="standaloneFidelity"><option value="strict" selected>صارمة جدًا</option><option value="high">عالية</option><option value="creative">مرنة قليلًا</option></select></div>
+            </div>
+            <p class="hint">الشعار: تبقى واجهته وألوانه وحروفه كما هي ويضاف العمق خلفها. الشخص: تبقى ملامحه وملابسه ووقفته كاملة. الشفافية مطلوبة من أداة التوليد؛ تحقق من قناة ألفا بعد التصدير.</p>
+          </div>
+          <div class="group" id="paperStyleGroup">
+            <h3>نوع التحويل</h3>
+            <div class="grid3">
+              <div class="field"><label>النمط الرئيسي</label>
+                <select id="styleType">
+                  <option value="premium pop-up book">كتاب منبثق فاخر</option>
+                  <option value="paper diorama">ديوراما ورقية</option>
+                  <option value="layered paper cut">قصاصات ورقية متعددة الطبقات</option>
+                  <option value="folded papercraft">ورق مطوي هندسي</option>
+                  <option value="handcrafted storybook">كتاب قصصي يدوي</option>
+                  <option value="cinematic realistic papercraft">مشهد ورقي سينمائي واقعي</option>
+                  <option value="educational classroom papercraft">مشهد تعليمي مدرسي</option>
+                  <option value="museum-grade paper sculpture">مجسم ورقي متحفي</option>
+                </select>
+              </div>
+              <div class="field"><label>الفخامة</label>
+                <select id="luxury">
+                  <option>بسيط</option><option>أنيق</option><option selected>فاخر</option><option>فاخر جدًا</option><option>متحفي</option><option>سينمائي راقٍ جدًا</option>
+                </select>
+              </div>
+              <div class="field"><label>الواقعية</label>
+                <select id="realism">
+                  <option>واقعي جدًا</option><option selected>واقعي مع لمسة فنية</option><option>شبه واقعي</option><option>قصصي</option><option>كرتوني لطيف</option><option>فني يدوي</option>
+                </select>
+              </div>
+              <div class="field"><label>الالتزام بالأصل</label>
+                <select id="fidelity">
+                  <option value="extremely strict">صارم جدًا</option>
+                  <option value="high" selected>عالٍ</option>
+                  <option value="moderate">متوسط</option>
+                  <option value="flexible">مرن</option>
+                  <option value="creative">حر إبداعيًا</option>
+                </select>
+              </div>
+              <div class="field"><label>كثافة الطبقات</label>
+                <select id="layerDepth">
+                  <option>خفيفة</option><option selected>متوسطة</option><option>عميقة</option><option>متعددة المستويات</option><option>درامية</option>
+                </select>
+              </div>
+              <div class="field"><label>التعقيد الهندسي</label>
+                <select id="geometry">
+                  <option>بسيط</option><option>متوسط</option><option selected>احترافي</option><option>هندسي متقدم</option><option>متحفي</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="group" id="threeDGroup">
+            <h3>إبراز العناصر ثلاثية الأبعاد 3D</h3>
+            <div class="field"><label for="threeDMode">اكتشاف العناصر القابلة للتجسيم</label>
+              <select id="threeDMode"><option value="off" selected>إيقاف — الإعدادات المعتادة</option><option value="auto">تلقائي متوازن</option><option value="strong">تلقائي ببروز واضح</option></select>
+            </div>
+            <div class="grid" id="threeDOptions">
+              <div class="field"><label for="threeDScope">عدد العناصر</label>
+                <select id="threeDScope"><option value="key" selected>الأهم مع عناصر داعمة قليلة</option><option value="all">جميع العناصر المناسبة دون ازدحام</option></select>
+              </div>
+              <div class="field"><label for="threeDForm">شكل الإبراز</label>
+                <select id="threeDForm"><option value="mixed" selected>مزيج طبقات ومجسّمات مطوية</option><option value="folded">مجسّمات ورقية مطوية</option><option value="relief">بروز طبقي متدرج</option></select>
+              </div>
+            </div>
+            <p class="hint">يطلب المولد من أداة توليد الصور أو الفيديو تحليل المرجع واختيار العناصر المناسبة؛ هذه الصفحة لا تتعرّف على محتوى الصورة بنفسها. تبقى النصوص العربية والشعارات الدقيقة واضحة على سطحها.</p>
+          </div>
+
+          <div class="group" id="paperEngineeringGroup">
+            <h3>التحكم الهندسي المتقدم</h3>
+            <div class="grid3">
+              <div class="field"><label>ارتفاع الانبثاق</label><select id="popHeight"><option value="subtle rise">خفيف</option><option value="moderate rise" selected>متوسط</option><option value="high rise">مرتفع</option><option value="dramatic tiered rise">درامي متدرج</option></select></div>
+              <div class="field"><label>المقدمة</label><select id="foreground"><option value="minimal foreground">خفيفة</option><option value="balanced foreground" selected>متوازنة</option><option value="prominent foreground">بارزة</option></select></div>
+              <div class="field"><label>عمق الخلفية</label><select id="backgroundDepth"><option value="flat background">مسطحة</option><option value="single background layer">طبقة واحدة</option><option value="multiple receding background layers" selected>طبقات متراجعة</option></select></div>
+              <div class="field"><label>أسلوب التشييد</label><select id="assembly"><option value="precise studio paper engineering" selected>استديو دقيق</option><option value="classroom handmade craft">نشاط صفي</option><option value="museum-quality intricate construction">بناء متحفي</option></select></div>
+              <div class="field"><label>درجة التفاصيل</label><select id="detailLevel"><option value="clean minimal detail">مبسطة</option><option value="balanced detail" selected>متوازنة</option><option value="fine intricate detail">دقيقة جدًا</option></select></div>
+              <div class="field"><label>ثبات البناء</label><select id="support"><option value="visible realistic paper tabs">ألسنة ظاهرة</option><option value="subtle hidden supports" selected>دعامات مخفية</option><option value="classic V-fold supports">دعامات طي على شكل V</option></select></div>
+            </div>
+          </div>
+          <div class="group" id="paperLayerGroup">
+            <h3>العناصر التي تتحول إلى طبقات</h3>
+            <div class="checks" id="layerChecks">
+              <label class="check"><input type="checkbox" value="people and characters" checked> الشخصيات والأشخاص</label>
+              <label class="check"><input type="checkbox" value="buildings and architecture" checked> المباني والعمارة</label>
+              <label class="check"><input type="checkbox" value="foreground objects and tools" checked> الأدوات والعناصر الأمامية</label>
+              <label class="check"><input type="checkbox" value="trees and natural scenery" checked> الأشجار والطبيعة</label>
+              <label class="check"><input type="checkbox" value="background scenery"> الخلفية</label>
+              <label class="check"><input type="checkbox" value="titles and decorative typography"> العناوين والزخارف النصية</label>
+              <label class="check"><input type="checkbox" value="educational icons and cards"> البطاقات والأيقونات التعليمية</label>
+              <label class="check"><input type="checkbox" value="floor and ground plane"> الأرضية</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="preserve">
+          <div class="group">
+            <h3>العناصر المحمية</h3>
+            <div class="checks" id="preserveChecks">
+              <label class="check"><input type="checkbox" value="faces and identity" checked> الوجوه والهوية</label>
+              <label class="check"><input type="checkbox" value="people and clothing" checked> الأشخاص والملابس</label>
+              <label class="check"><input type="checkbox" value="original composition and placement" checked> التكوين ومواقع العناصر</label>
+              <label class="check"><input type="checkbox" value="architecture and object design" checked> العمارة وتصميم الأشياء</label>
+              <label class="check"><input type="checkbox" value="product appearance and branding" checked> المنتجات والعلامات</label>
+              <label class="check"><input type="checkbox" value="original color palette" checked> لوحة الألوان</label>
+              <label class="check"><input type="checkbox" value="text content and layout" checked> النصوص وتوزيعها</label>
+              <label class="check"><input type="checkbox" value="proportions and scale relationships" checked> النسب والأحجام</label>
+              <label class="check"><input type="checkbox" value="lighting mood"> مزاج الإضاءة</label>
+              <label class="check"><input type="checkbox" value="place identity and cultural context" checked> هوية المكان والسياق</label>
+            </div>
+          </div>
+
+          <div class="group">
+            <h3>قيود صارمة</h3>
+            <div class="checks" id="constraintChecks">
+              <label class="check"><input type="checkbox" value="do not add unnecessary new objects" checked> لا تضف عناصر غير ضرورية</label>
+              <label class="check"><input type="checkbox" value="do not remove essential elements" checked> لا تحذف عناصر أساسية</label>
+              <label class="check"><input type="checkbox" value="do not distort faces or anatomy" checked> لا تشوه الوجوه أو التشريح</label>
+              <label class="check"><input type="checkbox" value="do not redesign architecture" checked> لا تعيد تصميم العمارة</label>
+              <label class="check"><input type="checkbox" value="do not shift the original color palette" checked> لا تغيّر لوحة الألوان</label>
+              <label class="check"><input type="checkbox" value="do not mirror or reverse text" checked> لا تعكس النصوص</label>
+              <label class="check"><input type="checkbox" value="do not invent fake text" checked> لا تخترع نصوصًا</label>
+              <label class="check"><input type="checkbox" value="do not create unrealistic paper mechanics" checked> لا تجعل الميكانيكا الورقية غير منطقية</label>
+              <label class="check"><input type="checkbox" value="do not break perspective" checked> لا تفسد المنظور</label>
+              <label class="check"><input type="checkbox" value="avoid excessive camera motion" checked> تجنب حركة كاميرا مبالغًا فيها</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="motion">
+          <div class="group">
+            <h3>حركة الصفحة والعناصر</h3>
+            <div class="grid3">
+              <div class="field"><label>بداية المشهد</label>
+                <select id="startState">
+                  <option value="the page begins completely flat and inactive">مسطحة وخاملة</option>
+                  <option value="the book begins closed">الكتاب مغلق</option>
+                  <option value="the page is already open with elements still flat">مفتوحة والعناصر مسطحة</option>
+                </select>
+              </div>
+              <div class="field"><label>نوع الانفتاح</label>
+                <select id="unfold">
+                  <option value="gently unfolds with elegant mechanical realism">هادئ وميكانيكي أنيق</option>
+                  <option value="slow cinematic unfolding">سينمائي بطيء</option>
+                  <option value="sequential layered rise">ارتفاع طبقي متتابع</option>
+                  <option value="playful child-friendly pop-up motion">مرح للأطفال</option>
+                  <option value="museum-style precision reveal">كشف متحفي دقيق</option>
+                </select>
+              </div>
+              <div class="field"><label>سرعة الحركة</label>
+                <select id="speed">
+                  <option>بطيئة جدًا</option><option selected>بطيئة</option><option>متوسطة</option><option>ناعمة</option><option>درامية</option>
+                </select>
+              </div>
+              <div class="field"><label>ميكانيكا الورق</label>
+                <select id="mechanics">
+                  <option value="folded hinges, tabs, slots and hidden paper supports">طيات ومفاصل وألسنة ودعامات مخفية</option>
+                  <option value="classic V-fold and parallel-fold pop-up mechanisms">آليات V-fold وparallel-fold</option>
+                  <option value="layered stage-card mechanics">آلية طبقات مسرحية</option>
+                  <option value="accordion and stepped paper engineering">أكورديون ودرجات ورقية</option>
+                </select>
+              </div>
+              <div class="field"><label>حركة الكاميرا</label>
+                <select id="cameraMove">
+                  <option value="almost static camera with subtle cinematic drift">شبه ثابتة مع انجراف خفيف</option>
+                  <option value="no camera movement">بدون حركة</option>
+                  <option value="gentle push-in">تقريب خفيف</option>
+                  <option value="soft three-quarter tracking movement">تتبع 3/4 ناعم</option>
+                  <option value="slow top-down reveal">كشف علوي بطيء</option>
+                </select>
+              </div>
+              <div class="field"><label>زاوية الكاميرا</label>
+                <select id="cameraAngle">
+                  <option value="three-quarter front view">أمامية 3/4</option>
+                  <option value="front-facing view">أمامية مباشرة</option>
+                  <option value="slightly elevated view">علوية مائلة</option>
+                  <option value="top-down view">علوية</option>
+                  <option value="close-medium cinematic view">قريبة متوسطة</option>
+                  <option value="wide establishing view">واسعة</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="group" id="timingGroup">
+            <h3>توقيت مقترح للفيديو</h3>
+            <div class="grid3">
+              <div class="field"><label>مدة الفيديو</label><input id="duration" type="number" min="2" max="30" value="8"></div>
+              <div class="field"><label>زمن البداية المسطحة</label><input id="flatTime" type="number" min="0" max="10" step=".5" value="1"></div>
+              <div class="field"><label>زمن اكتمال الانبثاق</label><input id="riseTime" type="number" min="1" max="20" step=".5" value="5"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="material">
+          <div class="group">
+            <h3>الخامات والقص</h3>
+            <div class="grid3">
+              <div class="field"><label>الخامة الرئيسية</label>
+                <select id="paper">
+                  <option value="thick artist cardstock">ورق فني مقوى</option>
+                  <option value="premium matte cardstock">كرتون مطفي فاخر</option>
+                  <option value="colored craft paper">ورق أشغال ملون</option>
+                  <option value="printed storybook paper">ورق كتاب قصصي مطبوع</option>
+                  <option value="museum-grade textured paper">ورق متحفي محبب</option>
+                  <option value="school craft paper">ورق نشاط مدرسي</option>
+                </select>
+              </div>
+              <div class="field"><label>الحواف</label>
+                <select id="edges">
+                  <option value="clean precision-cut edges">قص دقيق ونظيف</option>
+                  <option value="subtle handmade cut edges">حواف يدوية خفيفة</option>
+                  <option value="laser-cut precision">قص ليزري دقيق</option>
+                  <option value="soft rounded child-safe craft edges">حواف طفولية آمنة ناعمة</option>
+                </select>
+              </div>
+              <div class="field"><label>السماكة</label>
+                <select id="thickness">
+                  <option value="realistic medium cardstock thickness">متوسطة واقعية</option>
+                  <option value="thin layered paper">رقيقة متعددة الطبقات</option>
+                  <option value="thick premium board">لوح ورقي سميك فاخر</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <h3>الإضاءة والظلال</h3>
+            <div class="grid3">
+              <div class="field"><label>الإضاءة</label>
+                <select id="lighting">
+                  <option value="soft natural studio lighting">استديو طبيعية ناعمة</option>
+                  <option value="warm classroom daylight">ضوء صفي دافئ</option>
+                  <option value="cinematic soft key lighting">سينمائية ناعمة</option>
+                  <option value="bright clean product lighting">إضاءة منتج مشرقة</option>
+                  <option value="golden warm light">ذهبية دافئة</option>
+                </select>
+              </div>
+              <div class="field"><label>الظلال</label>
+                <select id="shadows">
+                  <option value="soft contact shadows with realistic occlusion">ظلال تلامس ناعمة</option>
+                  <option value="gentle layered paper shadows">ظلال طبقية خفيفة</option>
+                  <option value="dramatic but believable cinematic shadows">سينمائية بارزة واقعية</option>
+                </select>
+              </div>
+              <div class="field"><label>الجو العام</label>
+                <select id="mood">
+                  <option value="premium and elegant">فاخر وأنيق</option>
+                  <option value="warm educational and child-friendly">تعليمي دافئ للأطفال</option>
+                  <option value="playful and colorful">مرح وملون</option>
+                  <option value="clean professional presentation">احترافي نظيف</option>
+                  <option value="museum-like and refined">متحفي راقٍ</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="group">
+            <h3>اللمسات الحسية</h3><div class="grid">
+              <div class="field"><label>أثر الصنعة اليدوية</label><select id="imperfections"><option value="nearly invisible handmade variation">دقيق جدًا</option><option value="subtle handmade variation" selected>لمسات طفيفة</option><option value="visible crafted character">واضح باعتدال</option></select></div>
+              <div class="field"><label>حدة الظلال</label><select id="shadowStrength"><option value="delicate contact shading">خفيفة</option><option value="natural contact shading" selected>طبيعية</option><option value="defined but believable shading">بارزة</option></select></div>
+            </div></div>
+        </div>
+
+        <div class="section" id="text">
+          <div class="group">
+            <h3>قواعد النص العربي</h3>
+            <div class="checks" id="textChecks">
+              <label class="check"><input type="checkbox" value="preserve the exact original Arabic wording" checked> الحفاظ على النص العربي حرفيًا</label>
+              <label class="check"><input type="checkbox" value="maintain correct RTL direction" checked> اتجاه RTL صحيح</label>
+              <label class="check"><input type="checkbox" value="keep Arabic letters connected and properly shaped" checked> اتصال الحروف العربية صحيح</label>
+              <label class="check"><input type="checkbox" value="do not mirror, reverse or scramble Arabic text" checked> منع القلب والعكس والتشويه</label>
+              <label class="check"><input type="checkbox" value="preserve title hierarchy and text placement" checked> الحفاظ على هرمية النص وموقعه</label>
+              <label class="check"><input type="checkbox" value="do not invent new text unless explicitly requested" checked> لا تضف نصوصًا جديدة</label>
+              <label class="check"><input type="checkbox" value="use clear legible Arabic typography" checked> خط عربي واضح</label>
+              <label class="check"><input type="checkbox" value="keep numerals in the source numeral system" checked> الحفاظ على نظام الأرقام الأصلي</label>
+            </div>
+          </div>
+
+          <div class="group">
+            <h3>التعامل مع النص في المشهد الورقي</h3>
+            <div class="grid">
+              <div class="field"><label>أسلوب النص</label>
+                <select id="textMode">
+                  <option value="text remains printed on its original paper surfaces">يبقى مطبوعًا على سطحه الأصلي</option>
+                  <option value="key titles may rise slightly as separate paper layers">العناوين الرئيسية تبرز قليلًا</option>
+                  <option value="all text stays flat while visual elements rise">النص مسطح والعناصر فقط تنبثق</option>
+                </select>
+              </div>
+              <div class="field"><label>حماية النص</label>
+                <select id="textProtection">
+                  <option value="maximum text fidelity">قصوى جدًا</option>
+                  <option value="high text fidelity">عالية</option>
+                  <option value="balanced text fidelity">متوازنة</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="special">
+          <div class="spec-box">
+            <b>التخصصات المدمجة الآن</b>
+            <div class="note">هذه ليست فكرة مستقبلية مؤجلة؛ هي جزء من المولد الحالي. اختر المجال وسيضيف المولد تعليماته المتخصصة تلقائيًا.</div>
+          </div>
+          <div class="group">
+            <h3>نوع المشهد المتخصص</h3>
+            <div class="grid">
+              <div class="field"><label>التخصص</label>
+                <select id="specialization">
+                  <option value="general">عام</option>
+                  <option value="educational">تعليمي</option>
+                  <option value="children">أطفال وروضة</option>
+                  <option value="tourism">سياحي</option>
+                  <option value="school activity">نشاط مدرسي</option>
+                  <option value="storybook">كتاب قصصي</option>
+                  <option value="product presentation">عرض منتج</option>
+                  <option value="heritage">تراثي</option>
+                  <option value="scientific">علمي</option>
+                  <option value="awareness">توعوي</option>
+                  <option value="celebration">احتفالي</option>
+                </select>
+              </div>
+              <div class="field"><label>الفئة المستهدفة</label>
+                <select id="audience">
+                  <option value="general audience">جمهور عام</option>
+                  <option value="young children">أطفال صغار</option>
+                  <option value="students">طلاب</option>
+                  <option value="teachers">معلمون</option>
+                  <option value="families">أسر</option>
+                  <option value="social media viewers">سوشيال ميديا</option>
+                  <option value="professional audience">جمهور مهني</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <h3>وحدات تخصصية إضافية</h3>
+            <div class="checks" id="specialChecks">
+              <label class="check"><input type="checkbox" value="educational clarity and concept hierarchy"> وضوح تربوي وتسلسل المفهوم</label>
+              <label class="check"><input type="checkbox" value="child-safe friendly forms and simple visual hierarchy"> أشكال آمنة وواضحة للأطفال</label>
+              <label class="check"><input type="checkbox" value="tourism map-like depth and landmark emphasis"> عمق سياحي وإبراز المعالم</label>
+              <label class="check"><input type="checkbox" value="storybook narrative reveal with scene continuity"> تسلسل قصصي واستمرارية المشهد</label>
+              <label class="check"><input type="checkbox" value="premium product-focus composition"> تركيز احترافي على المنتج</label>
+              <label class="check"><input type="checkbox" value="heritage-sensitive material and cultural fidelity"> وفاء للتراث والسياق الثقافي</label>
+              <label class="check"><input type="checkbox" value="scientific diagram accuracy"> دقة الرسوم العلمية</label>
+              <label class="check"><input type="checkbox" value="school-activity documentation feel"> طابع توثيق نشاط مدرسي</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="output">
+          <div class="group">
+            <h3>نوع النتيجة</h3>
+            <div class="grid3">
+              <div class="field"><label>الهدف</label>
+                <select id="target">
+                  <option value="image-to-video">تحريك صورة إلى فيديو</option>
+                  <option value="image-to-image">تحويل صورة إلى صورة</option>
+                  <option value="standalone-3d">مجسم مستقل بخلفية شفافة PNG</option>
+                  <option value="text-to-image">إنشاء صورة من وصف</option>
+                  <option value="text-to-video">إنشاء فيديو من وصف</option>
+                  <option value="multi-scene sequence">تسلسل مشاهد</option>
+                </select>
+              </div>
+              <div class="field"><label>الأبعاد</label>
+                <select id="aspect">
+                  <option>16:9</option><option>9:16</option><option>1:1</option><option>4:5</option><option>A4 عمودي</option><option>A4 أفقي</option>
+                </select>
+              </div>
+              <div class="field"><label>الجودة</label>
+                <select id="quality">
+                  <option>عالية</option><option selected>عالية جدًا</option><option>احترافية</option><option>سينمائية</option>
+                </select>
+              </div>
+              <div class="field"><label>لغة البرومبت الأساسية</label>
+                <select id="promptLang">
+                  <option value="english">الإنجليزية</option>
+                  <option value="arabic">العربية</option>
+                  <option value="bilingual">ثنائي اللغة</option>
+                </select>
+              </div>
+              <div class="field"><label>طول البرومبت</label>
+                <select id="verbosity">
+                  <option value="compact">مختصر</option>
+                  <option value="balanced" selected>متوازن</option>
+                  <option value="advanced">متقدم</option>
+                  <option value="maximum">متقدم جدًا</option>
+                </select>
+              </div>
+              <div class="field"><label>صيغة المعاملات</label>
+                <select id="paramStyle"><option value="none">بدون</option><option value="midjourney">Midjourney (إضافة --ar للصور)</option></select><small class="hint" id="paramTip">يُضاف معامل النسبة للصور الثابتة فقط.</small>
+              </div>
+              <div class="field"><label>حد الأحرف (اختياري)</label><input id="charLimit" type="number" min="0" max="20000" step="50" placeholder="مثال: 1000"></div>
+              <div class="field"><label>شكل النتيجة</label>
+                <select id="finish">
+                  <option value="premium handcrafted realistic pop-up artwork">ورقي يدوي فاخر واقعي</option>
+                  <option value="cinematic paper sculpture">منحوتة ورقية سينمائية</option>
+                  <option value="clean educational papercraft">ورقي تعليمي نظيف</option>
+                  <option value="playful child-friendly paper scene">ورقي طفولي مرح</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="presets">
+          <div class="group">
+            <h3>قوالب جاهزة بضغطة واحدة</h3>
+            <div class="preset-grid" id="presetGrid">
+              <div class="preset" data-preset="strict"><b>Pop-up محافظ جدًا</b><small>أقصى حماية للصورة الأصلية والنصوص والهوية.</small></div>
+              <div class="preset" data-preset="education"><b>تعليمي للأطفال</b><small>وضوح تربوي، ألوان مريحة، حركة هادئة.</small></div>
+              <div class="preset" data-preset="cinematic"><b>سينمائي فاخر</b><small>خامات راقية، عمق وإضاءة وحركة كاميرا خفيفة.</small></div>
+              <div class="preset" data-preset="diorama"><b>Paper Diorama</b><small>طبقات عميقة ومشهد مجسّم واضح.</small></div>
+              <div class="preset" data-preset="tourism"><b>سياحي فاخر</b><small>إبراز المعالم وعمق خريطي ديورامي.</small></div>
+              <div class="preset" data-preset="school"><b>نشاط مدرسي</b><small>يحافظ على التوثيق والنصوص والأدوات التعليمية.</small></div>
+              <div class="preset" data-preset="storybook"><b>كتاب قصصي</b><small>كشف سردي متدرج واستمرارية بين المشاهد.</small></div>
+              <div class="preset" data-preset="product"><b>عرض منتج ورقي</b><small>تركيز بصري على المنتج مع حماية التصميم والعلامة.</small></div>
+              <div class="preset" data-preset="children"><b>روضة وأطفال</b><small>حركة لطيفة وعناصر واضحة للطفل.</small></div>
+              <div class="preset" data-preset="heritage"><b>مشهد تراثي</b><small>حس ثقافي وخامات ورقية متحفية.</small></div>
+              <div class="preset" data-preset="science"><b>مفهوم علمي</b><small>دقة الرموز والمخططات العلمية.</small></div>
+              <div class="preset" data-preset="awareness"><b>توعية</b><small>رسالة واضحة في مجسم ورقي.</small></div>
+              <div class="preset" data-preset="festive"><b>احتفاء</b><small>لمسة احتفالية مع حفظ الأصل.</small></div>
+              <div class="preset" data-preset="reels"><b>ريلز عمودي</b><small>٩:١٦ وحركة قصيرة لوسائل التواصل.</small></div>
+              <div class="preset" data-preset="logo3d"><b>شعار 3D شفاف</b><small>عمق خلف الشعار مع صون الكتابة والألوان.</small></div>
+              <div class="preset" data-preset="person3d"><b>شخصية 3D شفافة</b><small>تجسيم كامل للجسم مع حفظ الوجه والملابس.</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel output-wrap">
+      <div class="panel-h">
+        <h2>البرومبت الجاهز</h2>
+        <button id="copyBtn">نسخ</button>
+      </div>
+      <div class="panel-b">
+        <div class="callout" id="status" role="status" aria-live="polite">ابدأ برفع صورة أو كتابة وصف للمشهد.</div>
+        <div class="out-tabs">
+          <button class="out-tab" data-out="pages">كل الصفحات</button>
+          <button class="out-tab" data-out="guide">إرشادات الاستخدام</button>
+          <button class="out-tab" data-out="bilingual">ثنائي اللغة</button>
+          <button class="out-tab active" data-out="en">الإنجليزية</button>
+          <button class="out-tab" data-out="ar">العربية</button>
+          <button class="out-tab" data-out="short">المختصر</button>
+          <button class="out-tab" data-out="neg">Negative Prompt</button>
+        </div>
+        <div id="outBox" class="output">اضغط «إنشاء البرومبت» لعرض النتيجة.</div>
+        <div class="meta"><span id="charCount">٠ حرف</span><span id="fileMeta">٠ ملف</span></div>
+        <div class="out-actions"><button class="primary" id="downloadCurrentBtn">تنزيل النص الحالي</button><button id="copyAllBtn">نسخ كل المخرجات</button><button id="downloadBtn">تنزيل الحزمة TXT</button></div>
+      </div>
+    </aside>
+  </main>
+  <footer class="footer">أداة مستقلة تعمل في المتصفح · احفظ الملف باسم <b>index.html</b> عند رفعه إلى GitHub Pages · الملفات المرفوعة تبقى على جهازك</footer>
+</div>
+<div class="toast" id="toast">تم</div>
+
+<script>
+'use strict';
+const $=id=>document.getElementById(id), $$=s=>Array.from(document.querySelectorAll(s));
+const state={files:[],pages:[],urls:[],outputs:{},current:'en',dirty:false,pdfWarning:false};
+const arabicDigits=s=>String(s).replace(/[0-9]/g,d=>'٠١٢٣٤٥٦٧٨٩'[+d]);
+const vals=id=>$$(`#${id} input:checked`).map(x=>x.value);
+const labels=id=>$$(`#${id} input:checked`).map(x=>x.parentElement.textContent.trim());
+const value=id=>$(id).value, label=id=>$(id).selectedOptions[0]?.textContent.trim()||value(id);
+const enMap={
+ luxury:{'بسيط':'simple','أنيق':'elegant','فاخر':'premium','فاخر جدًا':'luxurious','متحفي':'museum-grade','سينمائي راقٍ جدًا':'refined cinematic'},
+ realism:{'واقعي جدًا':'photorealistic','واقعي مع لمسة فنية':'realistic with an artistic touch','شبه واقعي':'semi-realistic','قصصي':'storybook-like','كرتوني لطيف':'gentle cartoon','فني يدوي':'handcrafted artistic'},
+ layerDepth:{'خفيفة':'shallow','متوسطة':'medium','عميقة':'deep','متعددة المستويات':'multilevel','درامية':'dramatic'},
+ geometry:{'بسيط':'simple','متوسط':'moderate','احترافي':'professional','هندسي متقدم':'advanced engineered','متحفي':'museum-grade'},
+ speed:{'بطيئة جدًا':'very slow','بطيئة':'slow','متوسطة':'moderate','ناعمة':'gentle','درامية':'dramatic'},
+ quality:{'عالية':'high','عالية جدًا':'very high','احترافية':'professional','سينمائية':'cinematic'}
+};
+const eng=id=>enMap[id]?.[value(id)]||value(id);
+function toast(message){const e=$('toast');e.textContent=message;e.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>e.classList.remove('show'),3000)}
+function download(name,content,type='text/plain;charset=utf-8'){const blob=new Blob([type.startsWith('text/plain')?'\ufeff':'',content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),15000)}
+function showTab(id){$$('.tab').forEach(x=>{const on=x.dataset.tab===id;x.classList.toggle('active',on);x.setAttribute('aria-selected',on)});$$('.section').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelector('.tab.active')?.scrollIntoView({block:'nearest',inline:'nearest'});}
+function outputTab(id){state.current=id;$$('.out-tab').forEach(x=>{const on=x.dataset.out===id;x.classList.toggle('active',on);x.setAttribute('aria-selected',on)});const text=state.outputs[id]||'';$('outBox').textContent=text||(id==='pages'?'تظهر هنا برومبتات الصفحات عند تضمين صفحتين أو صورتين أو أكثر.':'أدخل وصفًا أو اختر ملفًا، ثم أنشئ البرومبت.');$('outBox').classList.toggle('ar',id==='ar'||id==='guide'||id==='bilingual');const lim=+value('charLimit')||0,cc=$('charCount');cc.textContent=arabicDigits(text.length)+' حرف · '+arabicDigits((text.trim().match(/\S+/g)||[]).length)+' كلمة'+(lim?' · الحد '+arabicDigits(lim):'');cc.classList.toggle('over',!!lim&&text.length>lim);}
+function info(message,kind=''){const box=$('status');box.textContent=message;box.className='callout'+(kind?' '+kind:'')}
+function isVideo(){return /video|sequence/.test(value('target'))}
+function isStandalone(){return value('target')==='standalone-3d'}
+function hasVisual(){return value('sourceType')!=='text description only'}
+function syncUI(){const visual=hasVisual(),video=isVideo(),multi=state.pages.length>1||/multiple|multi-page/.test(value('sourceType'));
+ $('uploadGroup').classList.toggle('is-hidden',!visual);$('pageGroup').classList.toggle('is-hidden',!multi);$('timingGroup').classList.toggle('is-hidden',!video);$('multiFields').classList.toggle('is-hidden',!multi);$('threeDOptions').classList.toggle('is-hidden',value('threeDMode')==='off');const standalone=isStandalone();for(const id of ['standaloneGroup','paperStyleGroup','threeDGroup','paperEngineeringGroup','paperLayerGroup'])$(id).classList.toggle('is-hidden',id==='standaloneGroup'?!standalone:standalone);for(const id of ['motion','material'])document.querySelector(`.tab[data-tab="${id}"]`)?.classList.toggle('is-hidden',standalone);if(standalone&&($('motion').classList.contains('active')||$('material').classList.contains('active')))showTab('style');$('sourceTip').textContent=visual?'أرفق الملف نفسه في أداة التوليد بعد نسخ البرومبت. معاينة الملفات هنا محلية ولا تُرفع إلى خادم.':'صف المشهد في خانة الوصف. لن يطلب البرومبت صورة مرجعية.';
+ const target=value('target');if(!visual && target.startsWith('image-to-'))$('target').value=target.endsWith('video')?'text-to-video':'text-to-image';if(visual && target.startsWith('text-to-'))$('target').value=target.endsWith('video')?'image-to-video':'image-to-image';
+ if(video&&value('aspect').startsWith('A4'))$('aspect').value='9:16';
+ $('paramTip').textContent=video?'في الفيديو تحدد صورة البداية نسبة الأبعاد؛ لن يُضاف --ar.':'يُضاف --ar بنِسَب الأبعاد المختارة للصور الثابتة فقط.';
+ $('fileMeta').textContent=arabicDigits(state.files.length)+' ملف · '+arabicDigits(state.pages.length)+' صفحة/صورة';
+}
+function makePage(name,kind,fileIndex,pageNumber=1,assumed=false){return {name,kind,fileIndex,pageNumber,assumed,note:'',include:true}}
+function snapshotPageNotes(){return state.pages.map(p=>({name:p.name,pageNumber:p.pageNumber,note:p.note,include:p.include}))}
+function readPageControls(){state.pages.forEach((p,i)=>{p.note=$(`pageNote${i}`)?.value||'';p.include=$(`pageUse${i}`)?.checked??p.include})}
+function renderPages(){const box=$('pageList');box.replaceChildren();state.pages.forEach((p,i)=>{const row=document.createElement('div');row.className='page-row';const ck=document.createElement('label');const input=document.createElement('input');input.type='checkbox';input.id='pageUse'+i;input.checked=p.include;ck.append(input,document.createTextNode(' تضمين '+(p.kind==='pdf'?'صفحة '+arabicDigits(p.pageNumber):'صورة '+arabicDigits(i+1))));const tag=document.createElement('span');tag.className='note';tag.textContent=p.name+(p.assumed?' · العدد يحتاج مراجعة':'');const txt=document.createElement('textarea');txt.id='pageNote'+i;txt.placeholder='وصف أو توجيه خاص لهذه الصفحة (اختياري)';txt.value=p.note;txt.setAttribute('aria-label','توجيه الصفحة '+(i+1));row.append(ck,tag,txt);box.append(row)});syncUI()}
+function pdfPageCount(bytes){const raw=new TextDecoder('latin1').decode(bytes);const matches=raw.match(/\/Type\s*\/Page\b/g);if(matches?.length)return {count:Math.min(matches.length,60),certain:true};const count=[...raw.matchAll(/\/Type\s*\/Pages\b[\s\S]{0,200}?\/Count\s+(\d+)/g)].map(x=>+x[1]).filter(x=>x>0&&x<=60);return {count:count.length?Math.max(...count):1,certain:false}}
+let loadToken=0;
+async function handleFiles(list){const token=++loadToken;state.urls.forEach(u=>URL.revokeObjectURL(u));state.urls=[];const src=Array.from(list),ok=src.filter(f=>f.type.startsWith('image/')||f.type==='application/pdf'||/\.pdf$/i.test(f.name));state.files=ok.slice(0,25);if(src.length>ok.length||ok.length>25)toast('تم تجاهل الملفات غير المدعومة أو الزائدة عن ٢٥ ملفًا');state.pages=[];const prev=$('preview');prev.replaceChildren();if(!state.files.length){prev.textContent='اختر صورًا أو ملف PDF لعرضها هنا.';renderPages();generate();saveDraft();return}
+ let uncertain=false;
+ for(let i=0;i<state.files.length;i++){const f=state.files[i],pdf=f.type==='application/pdf'||/\.pdf$/i.test(f.name),card=document.createElement('div');card.className='thumb';if(pdf){let detected={count:1,certain:false};try{detected=pdfPageCount(await f.arrayBuffer())}catch{}if(token!==loadToken)return;if(!detected.certain)uncertain=true;for(let n=1;n<=detected.count;n++)state.pages.push(makePage(f.name,'pdf',i,n,!detected.certain));const icon=document.createElement('div');icon.className='pdficon';icon.textContent='PDF';card.append(icon)}else{const url=URL.createObjectURL(f);state.urls.push(url);const img=document.createElement('img');img.src=url;img.alt=f.name;card.append(img);state.pages.push(makePage(f.name,'image',i))}const caption=document.createElement('span');caption.textContent=f.name;caption.title=f.name;card.append(caption);prev.append(card)}
+ {const cur=value('sourceType'),hasPdf=state.files.some(f=>/\.pdf$/i.test(f.name)||f.type==='application/pdf');let next;if(hasPdf)next=state.pages.length>1?'multi-page PDF':'single-page PDF';else if(cur==='image plus description'&&state.files.length===1)next=cur;else if(cur==='multiple images plus shared description'&&state.files.length>1)next=cur;else next=state.files.length>1?'multiple images':'single image';$('sourceType').value=next}renderPages();if(uncertain)info('تعذر التأكد من عدد صفحات بعض ملفات PDF. عدّل العدد في قسم الصفحات، ولأفضل نتيجة أرفق صورة منفصلة لكل صفحة في أداة التوليد.','warning');else info('الملفات معروضة محليًا. تأكد من إرفاق الصورة أو الصفحة المقابلة عند استخدام البرومبت في أداة التوليد.');generate();saveDraft()}
+function setPdfCount(){readPageControls();const pdfs=state.files.map((f,i)=>({f,i})).filter(({f})=>/\.pdf$/i.test(f.name)||f.type==='application/pdf');if(!pdfs.length)return toast('ارفع ملف PDF أولًا');const target=pdfs.length===1?pdfs[0].i:+prompt('رقم ملف PDF الذي تريد تعديل عدد صفحاته (ابتداءً من ١):', '1')-1;const count=+prompt('العدد الصحيح لصفحات PDF (من ١ إلى ٦٠):',String(state.pages.filter(p=>p.fileIndex===target).length||1));if(!Number.isInteger(count)||count<1||count>60||!pdfs.some(x=>x.i===target))return toast('أدخل عددًا صحيحًا بين ١ و٦٠');const prior=state.pages.filter(p=>p.fileIndex===target);state.pages=state.files.flatMap((f,i)=>{if(i===target)return Array.from({length:count},(_,n)=>({...makePage(f.name,'pdf',i,n+1),note:prior[n]?.note||'',include:prior[n]?.include??true}));return state.pages.filter(p=>p.fileIndex===i)});$('sourceType').value=state.pages.length>1?'multi-page PDF':'single-page PDF';renderPages();generate();saveDraft();toast('تم تحديث عدد الصفحات')}
+function validTime(){if(!isVideo())return true;let d=Number(value('duration')),f=Number(value('flatTime')),r=Number(value('riseTime'));return Number.isFinite(d)&&Number.isFinite(f)&&Number.isFinite(r)&&d>=2&&d<=30&&f>=0&&f<r&&r<=d}
+function getData(){readPageControls();return {source:value('sourceType'),target:value('target'),video:isVideo(),visual:hasVisual(),desc:value('description').trim(),extra:value('extra').trim(),selected:hasVisual()?state.pages.filter(p=>p.include):[],multi:value('multiMode'),reference:value('pageReference'),preserve:vals('preserveChecks'),preserveAr:labels('preserveChecks'),layers:vals('layerChecks'),layersAr:labels('layerChecks'),constraints:vals('constraintChecks'),constraintsAr:labels('constraintChecks'),texts:vals('textChecks'),textsAr:labels('textChecks'),specials:vals('specialChecks'),specialsAr:labels('specialChecks'),level:value('verbosity')}}
+const specialize={general:['',''],educational:['Keep each learning concept legible and age-appropriate; maintain instructional order.','حافظ على وضوح الفكرة التعليمية وترتيب الخطوات ومناسبتها للعمر.'],children:['Use welcoming forms and uncluttered layouts suitable for young children.','استخدم أشكالًا لطيفة ومساحات واضحة مناسبة للأطفال.'],tourism:['Preserve landmark identity and geographical context; reveal terrain in plausible layers.','حافظ على هوية المعالم وسياق المكان، وأظهر تضاريسه بطبقات منطقية.'], 'school activity':['Keep school documentation, participant identity and signage faithful to the source.','حافظ على طابع توثيق النشاط المدرسي وهوية المشاركين واللوحات.'],storybook:['Reveal narrative elements in a consistent sequence without replacing the story.','اكشف عناصر القصة بتسلسل واضح دون تبديل أحداثها.'],'product presentation':['Keep packaging, logo and product geometry exact; focus attention on the original product.','أبقِ العبوة والشعار وهيئة المنتج دقيقة، ووجّه الانتباه للمنتج الأصلي.'],heritage:['Respect cultural details and historical references in the supplied source.','احترم التفاصيل الثقافية والمرجع التاريخي في المادة الأصلية.'],scientific:['Protect labels, diagrams and scientific relationships from visual distortion.','احمِ المسميات والرسوم والعلاقات العلمية من التشويه.'],awareness:['Make the central message and intended action immediately understandable.','اجعل الرسالة التوعوية والسلوك المطلوب واضحين مباشرة.'],celebration:['Add a restrained festive mood without changing identities or required text.','أضف جوًا احتفاليًا رصينًا مع صون الهوية والنصوص.']};
+function threeDInstructionEN(d){
+ if(value('threeDMode')==='off')return '';
+ const source=d.visual?'Inspect the attached reference image before transforming it.':'Infer the objects only from the written scene description.';
+ const scope=value('threeDScope')==='all'?'Select every physically suitable element while keeping the composition uncluttered.':'Prioritize a small set of the most important subjects and supporting props.';
+ const form={mixed:'Use a deliberate mix of raised layered relief and folded dimensional paper forms.',folded:'Use convincing folded three-dimensional paper forms.',relief:'Use graduated paper relief with clearly separated planes.'}[value('threeDForm')];
+ const strength=value('threeDMode')==='strong'?'Give the chosen elements clear but controlled height and dimensional separation.':'Give the chosen elements balanced, natural dimensional depth.';
+ const sourceKinds=d.layers.length?d.layers.join(', '):'only the main subjects explicitly present in the source';
+ const movement=d.video?'Lift the chosen parts sequentially from the flat page using hinges and tabs; settle them into a stable final position.':'Show the selected parts standing stably above the page.';
+ return `Selective 3D emphasis: ${source} Identify only objects with clear contours and plausible paper volume within these allowed categories: ${sourceKinds}. ${scope} ${form} ${strength} Use realistic folds, tabs, supports, contact shadows and perspective. ${movement} Preserve each subject's identity, clothing, proportions, original position, palette and cultural context. Keep small Arabic writing, logos and fine labels flat and legible; only raise a main title slightly if the text-treatment option explicitly allows it. Never invent or duplicate an object; if nothing is suitable, retain a restrained layered scene.`
+}
+function threeDInstructionAR(d){
+ if(value('threeDMode')==='off')return '';
+ const source=d.visual?'افحص الصورة المرجعية أولًا وحدد العناصر الظاهرة القابلة للتجسيم.':'استنتج العناصر من وصف المشهد المكتوب فقط.';
+ const scope=value('threeDScope')==='all'?'اختر كل عنصر مناسب ماديًا دون ازدحام المشهد.':'اختر أبرز العناصر وبعض الأدوات الداعمة فقط.';
+ const form={mixed:'امزج بروز الطبقات مع المجسّمات الورقية المطوية.',folded:'اصنع مجسّمات ورقية مطوية ومقنعة هندسيًا.',relief:'استخدم بروزًا ورقيًا طبقيًا بمستويات واضحة.'}[value('threeDForm')];
+ const strength=value('threeDMode')==='strong'?'أبرز العناصر المختارة بارتفاع واضح ومنضبط.':'امنح العناصر المختارة عمقًا متوازنًا وطبيعيًا.';
+ const movement=d.video?'اجعلها تنهض تباعًا من الصفحة المسطحة بمفاصل وألسنة، ثم تستقر في مواضعها.':'اعرضها ثابتة فوق الصفحة في وضعها النهائي.';
+ return `إبراز ثلاثي الأبعاد انتقائي: ${source} اختر فقط العناصر ذات حدود واضحة وحجم ورقي ممكن ضمن الفئات المسموح بها: ${d.layersAr.join('، ')||'العناصر الرئيسية المذكورة في المصدر'}. ${scope} ${form} ${strength} استخدم طيات ودعامات وظلال تلامس ومنظورًا واقعيًا. ${movement} حافظ على هوية الأشخاص وملابسهم ونسبهم ومواقعهم وألوانهم وسياقهم. اترك الحروف العربية الصغيرة والشعارات والملصقات الدقيقة مسطحة ومقروءة؛ ولا ترفع العنوان الرئيسي قليلًا إلا إذا سمح خيار معالجة النص. لا تخترع عناصر ولا تكررها، وإذا لم يوجد عنصر مناسب فأبقِ المشهد طبقيًا هادئًا.`
+}
+function standaloneEnglish(d,compact=false){
+ const type=value('standaloneType'),finish=value('standaloneFinish'),depth=value('standaloneDepth'),view=value('standaloneView');
+ const src=d.visual?'Use the attached image as the exact visual reference; isolate its primary subject.':'Build the single subject only from the written description; no reference image is required.';
+ const identity=type==='logo'?'Treat the supplied logo artwork as an immutable front face. Preserve its exact silhouette, lettering (Arabic and Latin), letter connections, spacing, colors, symbols and arrangement. Add controlled extrusion behind the existing contours; do not redraw or reinterpret any word or symbol.':type==='person'?'Preserve the same person or character: face, expression, skin tone, hair, full-body pose, clothing, shoes and accessories. Give the body coherent sculpted volume, natural anatomy and believable depth without changing identity. Keep the entire figure and all visible items in frame.':type==='object'?'Preserve the exact object silhouette, design, markings, palette and proportions; build believable volume and edge depth without inventing parts.':'First determine whether the reference depicts a logo, person or object. For a logo, preserve every glyph and shape as an immutable front face and extrude only behind it; for a person, preserve face, pose, clothing and accessories while building coherent full-body volume; for an object, preserve its exact design and markings.';
+ const finishText={faithful:'Retain the source visual style while adding dimensional lighting and form.',polished:'Use a restrained polished 3D finish without plastic glare.',sculpted:'Use a refined sculpted illustration finish.',paper:'Use freestanding folded-paper construction without any page or book.'}[finish];
+ const depthText={subtle:'subtle',medium:'moderate',strong:'clear but controlled'}[depth];
+ const viewText=view==='front'?'Keep the original frontal orientation, revealing depth mainly along the sides.':'Use only a slight three-quarter turn while keeping every face and letter recognizable.';
+ const lines=[`Create ONE isolated, fully three-dimensional ${type==='auto'?'subject':type} as a transparent-background PNG cutout (RGBA with genuine alpha transparency). ${src}`,identity];
+ if(d.desc)lines.push(`Subject brief: ${d.desc}`);
+ lines.push(`3D treatment: ${depthText} depth. ${finishText} ${viewText} Protect the reference with ${value('standaloneFidelity')} fidelity. Use consistent self-shading, thickness and geometry while keeping the original colors.`);
+ lines.push('Keep the complete silhouette centered with safe transparent margins. No background, white fill, checkerboard pattern, page, book, room, scenery, floor, pedestal, frame, extra object, or cast shadow outside the cutout. Export one separate PNG with real alpha; retain clean antialiased transparent edges.');
+ if(!compact){lines.push(`Output framing: ${value('aspect')}; ${eng('quality')} quality. Preserve all essential source elements and exact text. ${d.extra?`Additional instructions: ${d.extra}`:''}`)}
+ else if(d.extra)lines.push(`Additional instructions: ${d.extra}`);
+ return lines.join('\n\n')
+}
+function standaloneArabic(d,compact=false){
+ const type=value('standaloneType'),finish=value('standaloneFinish'),view=value('standaloneView');
+ const source=d.visual?'اعتمد الصورة المرفقة مرجعًا بصريًا دقيقًا واعزل عنصرها الأساسي.':'أنشئ العنصر الواحد من الوصف المكتوب دون اشتراط صورة مرجعية.';
+ const identity=type==='logo'?'اجعل واجهة الشعار الأصلي ثابتة حرفيًا: حافظ على شكله وحروفه العربية واللاتينية واتصالها وتباعدها وألوانه ورموزه وتوزيعها. أضف العمق خلف حدوده الأصلية دون إعادة رسم أي حرف أو تغيير أي رمز.':type==='person'?'حافظ على الشخص أو الشخصية نفسها: الوجه والتعبير ولون البشرة والشعر والوقفة الكاملة والملابس والحذاء والملحقات. ابنِ حجمًا مجسمًا متسقًا للجسم دون تغيير الهوية، وأظهر الجسم كاملًا بكل أجزائه الظاهرة.':type==='object'?'حافظ على حدود الغرض وتصميمه وعلاماته وألوانه ونسبه، وأضف له حجمًا وعمقًا مقنعين دون اختراع أجزاء.':'حدّد أولًا هل المرجع شعار أم شخص أم غرض. للشعار: أبقِ واجهته بكل حروفها وأشكالها ثابتة وأضف العمق خلفها فقط. للشخص: احفظ الوجه والوقفة والملابس والملحقات مع تجسيم الجسم كاملًا. للغرض: احفظ تصميمه وعلاماته بدقة.';
+ const finishText={faithful:'حافظ على أسلوب الصورة الأصلي مع إضافة حجم وإضاءة مجسّمين.',polished:'استخدم تشطيبًا مجسمًا مصقولًا دون لمعان بلاستيكي زائد.',sculpted:'استخدم طابعًا فنيًا مجسمًا ناعمًا.',paper:'استخدم بناءً ورقيًا مطويًا مستقلًا دون صفحة أو كتاب.'}[finish];
+ const viewText=view==='front'?'احتفظ بواجهة الأصل وأظهر العمق من الحواف أساسًا.':'استخدم ميلًا خفيفًا جدًا مع بقاء الملامح والحروف واضحة.';
+ const lines=[`أنشئ مجسمًا ثلاثي الأبعاد مستقلًا واحدًا من نوع «${label('standaloneType')}» بخلفية شفافة حقيقية، في ملف PNG بقناة ألفا. ${source}`,identity];
+ if(d.desc)lines.push(`وصف العنصر: ${d.desc}`);
+ lines.push(`عمق المجسم: ${label('standaloneDepth')}. ${finishText} ${viewText} درجة الالتزام بالأصل: ${label('standaloneFidelity')}. اجعل سماكة العنصر وإضاءته الذاتية وهندسته متسقة، واحفظ ألوانه.`);
+ lines.push('أظهر العنصر كاملًا في الوسط مع هوامش شفافة آمنة. لا تضف خلفية بيضاء أو مربعات شفافية مرسومة أو صفحة أو كتابًا أو غرفة أو أرضية أو قاعدة أو إطارًا أو عنصرًا زائدًا أو ظلًا خارج حدود المجسم. سلّم صورة PNG واحدة ذات شفافية فعلية وحواف نظيفة.');
+ if(!compact)lines.push(`أبعاد الإخراج: ${label('aspect')}؛ الجودة: ${label('quality')}. حافظ على جميع تفاصيل المرجع الأساسية والنصوص حرفيًا.${d.extra?' تعليمات إضافية: '+d.extra:''}`);
+ else if(d.extra)lines.push(`تعليمات إضافية: ${d.extra}`);
+ return lines.join('\n\n')
+}
+function linesEnglish(d,compact=false){if(isStandalone())return standaloneEnglish(d,compact);const out=[],push=x=>{if(x)out.push(x)};const spec=specialize[value('specialization')]||specialize.general;const verb=compact?'compact':d.level;const ref=d.visual?'Use the supplied source image or matching page as the visual reference.':'Create the scene from the written description; no reference image is required.';
+ push(`Create ${d.video?'a physically plausible paper pop-up video':'a finished still papercraft image'} in the style of ${value('styleType')}. ${ref}`);
+ if(d.desc)push(`Scene brief: ${d.desc}`);
+ if(d.visual){push(`Reference fidelity: ${value('fidelity')}. Preserve: ${d.preserve.length?d.preserve.join(', '):'the defining visual features of the source'}.`)}
+ push(`Build tactile paper layers from ${d.layers.length?d.layers.join(', '):'the main visual subjects'}. Use ${eng('layerDepth')} depth, ${eng('geometry')} engineering, and a ${eng('luxury')}, ${eng('realism')} finish.`);
+ push(threeDInstructionEN(d));
+ if(d.video){push(`Start state: ${value('startState')}. Reveal: ${value('unfold')}. Construction: ${value('mechanics')}. Duration ${value('duration')} seconds; hold the first state for ${value('flatTime')} seconds and finish the major rise by ${value('riseTime')} seconds. Motion is ${eng('speed')} and mechanically grounded.`)}else push('Show the finished paper structure in its stable open state with believable folds, tabs and supports.');
+ if(verb==='advanced'||verb==='maximum')push(`Paper engineering: ${value('popHeight')}; ${value('foreground')}; ${value('backgroundDepth')}; ${value('assembly')}; ${value('detailLevel')}; ${value('support')}.`);
+ push(`View: ${value('cameraAngle')}; ${d.video?value('cameraMove'):'static camera'}. Material: ${value('paper')}, ${value('thickness')}, ${value('edges')}. Lighting: ${value('lighting')}; ${value('shadows')}. Mood: ${value('mood')}.`);
+ if(verb==='maximum')push(`Tactile detail: ${value('imperfections')}; ${value('shadowStrength')}. Make folds, contact shadows and motion physically consistent from first to last frame.`);
+ if(verb!=='compact'){push(`Arabic text: ${d.texts.length?d.texts.join('; '):'keep any original text legible and correctly oriented'}. Text treatment: ${value('textMode')}. Fidelity: ${value('textProtection')}.`);push(`Specialization: ${value('specialization')}; audience: ${value('audience')}. ${spec[0]}${d.specials.length?' Additional priorities: '+d.specials.join('; ')+'.':''}`)}
+ if(d.selected.length>1){const multi={ 'independent prompt for each page':'Produce one separate output per selected page.', 'same visual rules across all pages':'Apply one consistent art direction while keeping each page distinct.', 'connected sequential scenes':'Link scenes through a coherent progression without merging their content.', 'merge selected pages into one scene':'Combine selected pages into one coherent scene only when explicitly intended.'};push((multi[d.multi]||multi['independent prompt for each page'])+` Page reference rule: ${d.reference}.`)}
+ push(`Output: ${value('aspect')} framing, ${eng('quality')} quality, ${value('finish')}.`);
+ if(!compact){push(`Restrictions: ${d.constraints.length?d.constraints.join('; '):'avoid unwanted alterations'}. Maintain coherent perspective, paper thickness, contact shadows and supports.`);if(d.extra)push(`Additional instructions: ${d.extra}`)}
+ return out.join('\n\n')}
+function linesArabic(d,compact=false){if(isStandalone())return standaloneArabic(d,compact);const out=[],push=x=>{if(x)out.push(x)};const spec=specialize[value('specialization')]||specialize.general;const verb=compact?'compact':d.level;
+ push(`أنشئ ${d.video?'فيديو لمشهد ورقي منبثق بحركة مقنعة':'صورة نهائية لمشهد ورقي مجسّم'} بأسلوب «${label('styleType')}». ${d.visual?'استخدم الصورة أو صفحة المصدر المقابلة مرجعًا بصريًا.':'أنشئ المشهد من الوصف دون اشتراط صورة مرجعية.'}`);
+ if(d.desc)push(`وصف المشهد: ${d.desc}`);
+ if(d.visual)push(`درجة الالتزام بالأصل: ${label('fidelity')}. حافظ على: ${d.preserveAr.join('، ')||'ملامح المصدر الأساسية'}.`);
+ push(`حوّل ${d.layersAr.join('، ')||'العناصر الرئيسية'} إلى طبقات ورقية ملموسة. عمق الطبقات: ${label('layerDepth')}؛ تعقيد الهندسة: ${label('geometry')}؛ مستوى التنفيذ: ${label('luxury')}؛ مستوى الواقعية: ${label('realism')}.`);
+ push(threeDInstructionAR(d));
+ if(d.video)push(`حالة البداية: ${label('startState')}؛ الانفتاح: ${label('unfold')}؛ آلية البناء: ${label('mechanics')}. مدة الفيديو ${arabicDigits(value('duration'))} ثوانٍ؛ احتفظ بالبداية ${arabicDigits(value('flatTime'))} ثانية، وأكمل الارتفاع الرئيسي عند الثانية ${arabicDigits(value('riseTime'))}. سرعة الحركة: ${label('speed')}.`);else push('اعرض المشهد في حالته النهائية المفتوحة والثابتة، مع طيات وألسنة ودعامات قابلة للتصديق.');
+ if(verb==='advanced'||verb==='maximum')push(`الهندسة المتقدمة: ارتفاع الانبثاق ${label('popHeight')}؛ المقدمة ${label('foreground')}؛ الخلفية ${label('backgroundDepth')}؛ التنفيذ ${label('assembly')}؛ التفاصيل ${label('detailLevel')}؛ الدعامات ${label('support')}.`);
+ push(`زاوية الكاميرا: ${label('cameraAngle')}؛ ${d.video?'حركة الكاميرا: '+label('cameraMove'):'كاميرا ثابتة'}. الخامة: ${label('paper')}؛ السماكة: ${label('thickness')}؛ الحواف: ${label('edges')}. الإضاءة: ${label('lighting')}؛ الظلال: ${label('shadows')}؛ الجو: ${label('mood')}.`);
+ if(verb==='maximum')push(`اللمسات الحسية: ${label('imperfections')}؛ الظلال ${label('shadowStrength')}. لتكن الطيات والظلال والحركة متسقة في جميع الإطارات.`);
+ if(verb!=='compact'){push(`النص العربي: ${d.textsAr.join('، ')||'وضوح النص الأصلي واتجاهه الصحيح'}. المعالجة: ${label('textMode')}؛ الحماية: ${label('textProtection')}.`);push(`التخصص: ${label('specialization')}؛ الجمهور: ${label('audience')}. ${spec[1]}${d.specialsAr.length?' الأولويات الإضافية: '+d.specialsAr.join('، ')+'.':''}`)}
+ if(d.selected.length>1)push(`الصفحات والصور المتعددة: ${label('multiMode')}؛ المرجعية: ${label('pageReference')}.`);
+ push(`الإخراج: ${label('aspect')}؛ الجودة: ${label('quality')}؛ التشطيب: ${label('finish')}.`);
+ if(!compact){push(`القيود: ${d.constraintsAr.join('؛ ')||'تجنب التغيير غير المطلوب'}. حافظ على منظور سليم وسمك ورقي وظلال تلامس ودعامات واقعية.`);if(d.extra)push(`تعليمات إضافية: ${d.extra}`)}
+ return out.join('\n\n')}
+function negative(d){if(isStandalone())return ['opaque background','white background','fake checkerboard transparency','page or book','room or scenery','floor or pedestal','cast shadow outside subject','extra objects','cropped subject','flat 2D look','distorted logo letters','altered Arabic text','changed face or clothing','extra limbs','plastic glare','jagged alpha edges'].join(', ');const base=['distorted faces','changed identity','deformed hands','duplicate limbs','broken perspective','floating unsupported paper','impossible folds','plastic surfaces','scrambled Arabic','mirrored lettering','fabricated text','watermarks'];if(d.visual)base.push('replacement of the original scene');if(d.video)base.push('camera shake','sudden teleporting objects','frame flicker');if(d.constraints.includes('do not add unnecessary new objects'))base.push('unnecessary extra objects');if(d.constraints.includes('do not redesign architecture'))base.push('redesigned architecture');if(d.constraints.includes('do not shift the original color palette'))base.push('unwanted color shift');if(value('threeDMode')!=='off')base.push('flat cutouts without depth','unsupported floating extrusions','duplicated objects','unreadable extruded Arabic text','excessive bulky shapes');return [...new Set(base)].join(', ')}
+function pagePrompts(d){if(d.selected.length<2)return '';const commonBase=value('promptLang')==='arabic'?linesArabic(d,true):linesEnglish(d,true);const common=commonBase+(value('paramStyle')==='midjourney'&&!d.video?midjourneyRatio():'');const item=(p,i)=>`${i+1}. ${p.kind==='pdf'?'PDF page '+p.pageNumber:'Image '+(p.fileIndex+1)} — ${p.name}${p.note?'\nPage-specific direction: '+p.note:''}`;if(d.multi==='merge selected pages into one scene')return 'Attach every selected reference in one generation request. Combine them into one coherent scene while preserving their distinct content.\n\n'+d.selected.map(item).join('\n\n')+'\n\n'+common;return 'Attach the corresponding single page/image to each separate generation request.\n\n'+d.selected.map((p,i)=>item(p,i)+'\nUse only this matching source page/image for this output.\n\n'+common).join('\n\n──────────\n\n')}
+function guide(d){if(isStandalone())return ['أرفق صورة العنصر في أداة توليد الصور، أو اكتب وصفًا عند الإنشاء من النص. اختر قالب «شعار 3D شفاف» أو «شخصية 3D شفافة» حسب المثال.','انسخ البرومبت وأطلب PNG بخلفية شفافة حقيقية؛ قد تنتج بعض الأدوات خلفية مرسومة بدل قناة ألفا، لذا افحص الشفافية بعد التنزيل وأزل الخلفية بأداة تحرير عند الحاجة.','النتيجة المطلوبة صورة PNG بمظهر ثلاثي الأبعاد، وليست نموذجًا هندسيًا قابلًا للدوران. لا صفحة منبثقة ولا قاعدة أو مشهد خلف العنصر. الملفات المرفوعة هنا للمعاينة محليًا ولا تُرسل إلى خدمة.'].join('\n\n');const g=['طريقة الاستخدام:'];if(d.visual){g.push('١. أرفق الصورة نفسها في أداة توليد الصور أو الفيديو؛ رفعها هنا محلي للمعاينة وتنظيم الصفحات فقط.');if(d.selected.some(p=>p.kind==='pdf'))g.push('٢. إذا كانت أداة التوليد لا تقبل PDF، حوّل كل صفحة إلى صورة مستقلة وأرفق الصورة المطابقة. تحقّق من عدد الصفحات في قسم المصدر.');if(d.selected.length>1)g.push('٣. استخدم تبويب «كل الصفحات» للبرومبتات المنفصلة، أو أرفق جميع الصفحات عند اختيار الدمج.');}else g.push('١. أكمل وصف المشهد، ثم الصق البرومبت في أداة تدعم التوليد من النص.');g.push('قد لا تحفظ أدوات التوليد النص العربي حرفيًا؛ راجعه بصريًا بعد الإنتاج وعدّله في التصميم إذا لزم.');if(value('threeDMode')!=='off')g.push('خيار الإبراز 3D يوجّه أداة التوليد لاكتشاف العناصر من الصورة المرفقة أو الوصف؛ هذه الصفحة المحلية لا تحلل الصورة ولا تختار العناصر بصريًا.');if(value('paramStyle')==='midjourney')g.push(d.video?'عند استخدام فيديو Midjourney، تعتمد أبعاد الفيديو على نسبة صورة البداية؛ لا يُضاف --ar إلى برومبت الفيديو.':'يُضاف --ar إلى برومبتات الصور، وهو يحدد النسبة ولا يضمن حجم طباعة A4 أو الدقة.');g.push('الملفات لا تُحفظ في إعدادات المتصفح ولا تُرسل من هذه الصفحة إلى أي خدمة.');return g.join('\n\n')}
+function midjourneyRatio(){const r=({'A4 عمودي':'70:99','A4 أفقي':'99:70'})[value('aspect')]||value('aspect');return ' --ar '+r}
+function applyParams(){if(value('paramStyle')!=='midjourney'||isVideo())return;const p=midjourneyRatio();['en','ar','short','bilingual'].forEach(k=>{state.outputs[k]=state.outputs[k].replace(/\s+$/,'')+p})}
+function generate(quiet=false){const d=getData();if(!validTime()){info('التوقيت غير صحيح: يجب أن تكون البداية أقل من اكتمال الانبثاق، وأن يكون الاكتمال ضمن مدة الفيديو (٢–٣٠ ثانية).','error');if(!quiet)showTab('motion');return false}if(!d.desc&&!d.selected.length)info('أضف وصفًا أو ارفع مرجعًا بصريًا ليكون البرومبت محددًا.','warning');else if(d.visual&&!state.files.length)info('اخترت مدخلًا بصريًا ولم ترفع ملفًا هنا. أرفق المرجع مباشرة في أداة التوليد.','warning');else info('البرومبت جاهز. انسخ النص وأرفق المرجع الموافق له في أداة التوليد.');state.outputs={en:linesEnglish(d),ar:arabicDigits(linesArabic(d)),short:linesEnglish(d,true),neg:negative(d),pages:pagePrompts(d),guide:guide(d)};state.outputs.bilingual=state.outputs.ar+'\n\n────────── ENGLISH ──────────\n\n'+state.outputs.en;applyParams();if(value('promptLang')==='arabic'&&state.current==='en')state.current='ar';if(value('promptLang')==='bilingual'&&(state.current==='en'||state.current==='ar'))state.current='bilingual';outputTab(state.current);return true}
+function settings(){readPageControls();const fields={};$$('select,input[type=text],input[type=number],textarea').forEach(x=>{if(x.id&&!x.id.startsWith('pageNote'))fields[x.id]=x.value});const checks={};$$('input[type=checkbox]').filter(x=>!x.id.startsWith('pageUse')).forEach((x,i)=>{checks[x.value+'#'+i]=x.checked});return {schema:2,fields,checks,pageNotes:snapshotPageNotes()}}
+function applySettings(data){if(!data||typeof data!=='object'||!data.fields||typeof data.fields!=='object')throw Error('invalid');Object.entries(data.fields).forEach(([id,v])=>{const el=$(id);if(el&&typeof v==='string'&&(!el.options||[...el.options].some(o=>o.value===v)))el.value=v});if(data.checks)$$('input[type=checkbox]').filter(x=>!x.id.startsWith('pageUse')).forEach((x,i)=>{const k=x.value+'#'+i;if(Object.hasOwn(data.checks,k))x.checked=!!data.checks[k]});if(Array.isArray(data.pageNotes))state.pages.forEach(p=>{const found=data.pageNotes.find(x=>x.name===p.name&&x.pageNumber===p.pageNumber);if(found){p.note=String(found.note||'');p.include=!!found.include}});renderPages();syncUI();generate()}
+const presets={
+ strict:{threeDMode:'off',styleType:'premium pop-up book',fidelity:'extremely strict',textProtection:'maximum text fidelity',cameraMove:'no camera movement',layerDepth:'متوسطة'},
+ education:{threeDMode:'auto',styleType:'educational classroom papercraft',specialization:'educational',audience:'students',mood:'warm educational and child-friendly',finish:'clean educational papercraft'},
+ children:{threeDMode:'auto',styleType:'educational classroom papercraft',specialization:'children',audience:'young children',mood:'playful and colorful',finish:'playful child-friendly paper scene'},
+ cinematic:{threeDMode:'strong',styleType:'cinematic realistic papercraft',layerDepth:'عميقة',geometry:'هندسي متقدم',lighting:'cinematic soft key lighting',finish:'cinematic paper sculpture'},
+ diorama:{threeDMode:'strong',styleType:'paper diorama',layerDepth:'متعددة المستويات',cameraAngle:'three-quarter front view',paper:'premium matte cardstock'},
+ tourism:{threeDMode:'auto',styleType:'paper diorama',specialization:'tourism',layerDepth:'متعددة المستويات',cameraAngle:'slightly elevated view'},
+ school:{threeDMode:'auto',styleType:'educational classroom papercraft',specialization:'school activity',audience:'teachers',textProtection:'maximum text fidelity'},
+ storybook:{threeDMode:'auto',styleType:'handcrafted storybook',specialization:'storybook',unfold:'sequential layered rise',mood:'playful and colorful'},
+ product:{threeDMode:'auto',styleType:'premium pop-up book',specialization:'product presentation',fidelity:'extremely strict',lighting:'bright clean product lighting'},
+ heritage:{styleType:'museum-grade paper sculpture',specialization:'heritage',paper:'museum-grade textured paper'},
+ science:{styleType:'layered paper cut',specialization:'scientific',audience:'students'},
+ awareness:{styleType:'folded papercraft',specialization:'awareness'},
+ festive:{styleType:'premium pop-up book',specialization:'celebration',mood:'playful and colorful'},
+ logo3d:{target:'standalone-3d',sourceType:'single image',standaloneType:'logo',standaloneFinish:'faithful',standaloneDepth:'medium',standaloneView:'front',standaloneFidelity:'strict',aspect:'1:1',promptLang:'english'},
+ person3d:{target:'standalone-3d',sourceType:'single image',standaloneType:'person',standaloneFinish:'sculpted',standaloneDepth:'medium',standaloneView:'front',standaloneFidelity:'strict',aspect:'9:16',promptLang:'english'},
+ reels:{target:'image-to-video',aspect:'9:16',duration:'8',flatTime:'1',riseTime:'5',cameraMove:'gentle push-in'}
+};
+function preset(name){if(name!=='logo3d'&&name!=='person3d'&&isStandalone())$('target').value=hasVisual()?'image-to-video':'text-to-video';Object.entries(presets[name]||{}).forEach(([id,v])=>{const el=$(id);if(!el)return;if(el.options&&![...el.options].some(o=>o.value===v)){console.warn('preset value missing',id,v);return}el.value=v});syncUI();generate();if(name==='logo3d'||name==='person3d')showTab('style');toast('طُبّق القالب ويمكنك تعديل أي خيار')}
+$$('.tab').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+$$('.out-tab').forEach(b=>b.addEventListener('click',()=>outputTab(b.dataset.out)));
+$$('.preset').forEach(b=>{b.tabIndex=0;b.setAttribute('role','button');b.addEventListener('click',()=>preset(b.dataset.preset));b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();preset(b.dataset.preset)}})});
+$('files').addEventListener('change',e=>handleFiles(e.target.files));$('pdfCountBtn').addEventListener('click',setPdfCount);
+$('generateBtn').addEventListener('click',()=>{if(generate()){$('outBox').scrollTop=0;toast('البرومبت جاهز')}});
+$('smartBtn').addEventListener('click',()=>{const s=value('specialization');preset(({children:'children',tourism:'tourism',educational:'education','school activity':'school',storybook:'storybook','product presentation':'product',heritage:'heritage',scientific:'science',awareness:'awareness',celebration:'festive'})[s]||'strict');if(!hasVisual()&&value('target').startsWith('image-to-'))$('target').value='text-to-image';syncUI();generate()});
+let liveTimer;const refresh=(delay=0)=>{clearTimeout(liveTimer);liveTimer=setTimeout(()=>{syncUI();generate(delay>0);saveDraft()},delay)};
+$$('select,input:not([type=file]),textarea').forEach(x=>{if(/^page(Use|Note)\d/.test(x.id))return;x.addEventListener('change',()=>refresh());if(x.matches('textarea,input[type=number],input[type=text]'))x.addEventListener('input',()=>refresh(300))});
+$('pageList').addEventListener('input',()=>refresh(400));$('pageList').addEventListener('change',()=>refresh());
+function saveDraft(){try{localStorage.setItem('paperPromptDraftV2',JSON.stringify(settings()))}catch{}}
+function loadDraft(){try{const raw=localStorage.getItem('paperPromptDraftV2');if(!raw)return false;applySettings(JSON.parse(raw));return true}catch{return false}}
+$$('.file-btn').forEach(l=>l.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();l.querySelector('input').click()}}));
+{const dz=$('uploadGroup'),pv=$('preview');['dragenter','dragover'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();pv.classList.add('drag')}));['dragleave','drop'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();pv.classList.remove('drag')}));dz.addEventListener('drop',e=>{const fl=e.dataTransfer&&e.dataTransfer.files;if(fl&&fl.length){try{$('files').files=fl}catch{}handleFiles(fl)}})}
+$('tabs').setAttribute('role','tablist');$$('.tab,.out-tab').forEach(b=>b.setAttribute('role','tab'));$('toast').setAttribute('role','status');
+$('saveBtn').addEventListener('click',()=>{try{localStorage.setItem('paperPromptSettingsV2',JSON.stringify(settings()));toast('حُفظت الإعدادات، دون ملفات الصور وPDF')}catch{toast('تعذر الحفظ في هذا المتصفح؛ استخدم تصدير JSON')}});
+$('loadBtn').addEventListener('click',()=>{try{const raw=localStorage.getItem('paperPromptSettingsV2');if(!raw)return toast('لا توجد إعدادات محفوظة');applySettings(JSON.parse(raw));saveDraft();toast('استُعيدت الإعدادات')}catch{toast('تعذر استعادة الإعدادات')}});
+$('resetBtn').addEventListener('click',()=>{if(!confirm('هل تريد إعادة الخيارات إلى حالتها الافتراضية وحذف الحفظ المحلي؟'))return;try{localStorage.removeItem('paperPromptSettingsV2');localStorage.removeItem('paperPromptDraftV2')}catch{}location.reload()});
+$('exportBtn').addEventListener('click',()=>download('paper-prompt-settings.json',JSON.stringify(settings(),null,2),'application/json;charset=utf-8'));
+$('importJson').addEventListener('change',async e=>{try{const f=e.target.files[0];if(!f)return;if(f.size>200000)throw Error('large');applySettings(JSON.parse(await f.text()));saveDraft();toast('استُوردت الإعدادات')}catch{toast('ملف إعدادات غير صالح أو كبير جدًا')}e.target.value=''});
+async function copy(text){if(!text)return toast('لا يوجد نص لنسخه');try{await navigator.clipboard.writeText(text);toast('تم النسخ')}catch{const t=document.createElement('textarea');t.value=text;document.body.append(t);t.select();const ok=document.execCommand('copy');t.remove();toast(ok?'تم النسخ':'تعذر النسخ؛ حدّد النص يدويًا')}}
+$('copyBtn').addEventListener('click',()=>copy(state.outputs[state.current]));$('copyAllBtn').addEventListener('click',()=>copy(Object.entries(state.outputs).map(([k,v])=>`[${k.toUpperCase()}]\n${v}`).join('\n\n══════════\n\n')));
+$('downloadBtn').addEventListener('click',()=>download('paper-prompts.txt',Object.entries(state.outputs).map(([k,v])=>`[${k.toUpperCase()}]\n${v}`).join('\n\n══════════\n\n')));
+$('downloadCurrentBtn').addEventListener('click',()=>download(`paper-prompt-${state.current}.txt`,state.outputs[state.current]||''));
+window.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();generate();toast('تم تحديث البرومبت')}});
+showTab('source');if(loadDraft())toast('استُعيدت مسودتك الأخيرة');else{syncUI();generate()}
+</script>
+</body>
+</html>
